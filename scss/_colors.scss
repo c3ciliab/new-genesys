@@ -7,6 +7,8 @@
   --darker-color:    #001629; // Ceva Darker blue
   --black-blue:      #00111f; // Ceva Black blue
   --highlight-color: #00add8; // Ceva One
+  
+  --neutral-color:   rgba(255, 255, 255, 0.2);
 
   --bg-default:     var(--default-color);
   --bg-primary:     var(--darker-color);
@@ -14,7 +16,7 @@
   --bg-light:       var(--primary-color);
   --bg-dark:        var(--black-blue);
   --bg-hover:       var(--primary-color);
-  --bg-selected:    var(--primary-color);
+  --bg-selected:    var(--black-blue);
 
   --txt-default:    var(--default-color);
   --txt-primary:    var(--primary-color);

@@ -36,3 +36,9 @@ $xxl-txt: 32px;
     font-family: $mono;
     font-size: 1.25rem;
 }
+
+// Specifics
+#clock {
+    @include time-txt;
+    color: var(--txt-default);
+}

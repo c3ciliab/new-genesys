@@ -62,6 +62,10 @@
   @media (min-width: 768px) { @content; }
 }
 
+@mixin mq-mg {
+  @media (min-width: 820px) { @content; }
+}
+
 @mixin mq-lg {
   @media (min-width: 1024px) { @content; }
 }

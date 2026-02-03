@@ -1,0 +1,215 @@
+/******************* FX - NEON / FUTURISTIC *******************/
+@use "sass:color";
+@use "colors" as *;
+@use "typography" as *;
+
+/* SIMPLE NEON BORDER (outer glow) */
+@mixin neon-border($c, $alpha-border: .55, $alpha-ring: .15, $alpha-glow: .35, $alpha-glow2: .18) {
+  border: 1px solid rgba($c, $alpha-border);
+  box-shadow:
+    0 0 0 1px rgba($c, $alpha-ring),
+    0 0 18px rgba($c, $alpha-glow),
+    0 0 40px rgba($c, $alpha-glow2);
+}
+
+/* VARIANT WITH INNER GLOW (inset) */
+@mixin neon-border-inset($c, $alpha-border: .45) {
+  border: 1px solid rgba($c, $alpha-border);
+  box-shadow:
+    0 0 0 1px rgba($c, .15),
+    inset 0 0 0 1px rgba($c, .22),
+    inset 0 0 14px rgba($c, .22),
+    0 0 18px rgba($c, .35),
+    0 0 40px rgba($c, .18);
+}
+
+/* .neon-border {
+  border-radius: 12px;
+  border: 1px solid rgba(82, 201, 232, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(82, 201, 232, 0.15),
+    0 0 18px rgba(82, 201, 232, 0.35),
+    0 0 40px rgba(82, 201, 232, 0.18);
+}
+
+.neon-border--inset {
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 1px rgba(82, 201, 232, 0.15),
+    inset 0 0 0 1px rgba(82, 201, 232, 0.22),
+    inset 0 0 14px rgba(82, 201, 232, 0.22),
+    0 0 18px rgba(82, 201, 232, 0.35),
+    0 0 40px rgba(82, 201, 232, 0.18);
+}
+*/
+
+/* NEON TUBE EFFECT (glass/glow bg) */
+@mixin neon-tube($c, $radius: 12px, $bg: rgba(5, 18, 32, .55)) {
+  position: relative;
+  border-radius: $radius;
+  border: 1px solid rgba($c, .45);
+  background: $bg;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    inset 0 0 18px rgba($c,.10),
+    0 0 18px rgba($c,.22);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.18),
+      rgba(255,255,255,.03) 35%,
+      rgba($c,.10) 70%,
+      rgba(0,0,0,0)
+    );
+    /* RING (mask) */
+    -webkit-mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+/* .neon-tube {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba(82, 201, 232, 0.45);
+  background: rgba(5, 18, 32, 0.55);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.05),
+    inset 0 0 18px rgba(82,201,232,0.10),
+    0 0 18px rgba(82,201,232,0.22);
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        pointer-events: none;
+        background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.18),
+            rgba(255,255,255,0.03) 35%,
+            rgba(82,201,232,0.10) 70%,
+            rgba(0,0,0,0)
+        );
+        -webkit-mask: 
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        padding: 1px;
+    }
+} */
+
+/* ACTIVE TAB (glow + inset) */
+@mixin tab-base($radius: 12px, $pad-y: .25rem, $pad-x: .5rem) {
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  border-radius: $radius;
+  padding: $pad-y $pad-x;
+}
+
+@mixin tab-active($c) {
+  border-color: rgba($c, .65);
+  box-shadow:
+    0 0 0 1px rgba($c, .18),
+    0 0 18px rgba($c, .35),
+    inset 0 0 14px rgba($c, .14);
+}
+
+/* .tab {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+
+  &.is-active {
+    border-color: rgba(82,201,232,0.65);
+    box-shadow:
+        0 0 0 1px rgba(82,201,232,0.18),
+        0 0 18px rgba(82,201,232,0.35),
+        inset 0 0 14px rgba(82,201,232,0.14);
+    }
+} */
+
+/* NAV RAIL (container glow rail) */
+@mixin nav-rail($c, $inset: 4px, $thickness: 2px) {
+  position: relative;
+  padding: 2px $inset;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: $inset;
+    right: $inset;
+    top: 50%;
+    height: $thickness;
+    transform: translateY(-50%);
+    border-radius: 999px;
+
+    background: linear-gradient(
+      90deg,
+      rgba($c, 0) 0%,
+      rgba($c, .85) 20%,
+      rgba($c, .85) 80%,
+      rgba($c, 0) 100%
+    );
+
+    box-shadow:
+      0 0 10px rgba($c, .55),
+      0 0 24px rgba($c, .22);
+
+    pointer-events: none;
+  }
+}
+
+/*.nav-rail {
+  position: relative;
+  padding: 14px 12px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 50%;
+    height: 2px;
+    transform: translateY(-50%);
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(82,201,232,0) 0%,
+        rgba(82,201,232,0.85) 20%,
+        rgba(82,201,232,0.85) 80%,
+        rgba(82,201,232,0) 100%
+    );
+
+    box-shadow:
+        0 0 10px rgba(82,201,232,0.55),
+        0 0 24px rgba(82,201,232,0.22);
+    pointer-events: none;
+    }
+} */
+
+/* COLOR MODULE (sass:color) */
+$base: #52c9e8; // --highlight-color
+
+$withAlpha: color.change($base, $alpha: 0.3);    // opacity 30%
+$darker:    color.adjust($base, $lightness: -15%);
+$lighter:   color.adjust($base, $lightness:  12%);
+$mixed:     color.mix(#ffffff, $base, 20%);      // 20% white + base
