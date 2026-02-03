@@ -807,6 +807,14 @@ header .h-left-side .home-header .tagline {
   font-size: 14px;
   color: #00325a;
 }
+header .h-left-side .menu-filter {
+  display: none;
+}
+@media (min-width: 840px) {
+  header .h-left-side .menu-filter {
+    display: block;
+  }
+}
 header .h-right-side {
   display: flex;
   flex-direction: row;
