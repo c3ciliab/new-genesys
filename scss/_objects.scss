@@ -7,9 +7,12 @@
 
 // card
 .card, %card {
-  //background-color: var(--bg-secondary);
-  background-color: var(--bg-light);
+  @include flex;
+  position: relative;
+  padding: 1rem;
   border-radius: 8px;
+  background-color: var(--bg-light);
+  //background-color: var(--bg-secondary);
 }
 
 /* BUTTONS */

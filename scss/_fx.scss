@@ -52,8 +52,8 @@
 
   box-shadow:
     inset 0 0 0 1px rgba(255,255,255,.05),
-    inset 0 0 18px rgba($c,.10),
-    0 0 18px rgba($c,.22);
+    inset 0 0 16px rgba($c,.10),
+    0 0 16px rgba($c,.22);
 
   &::before {
     content: "";
@@ -147,9 +147,9 @@
 } */
 
 /* NAV RAIL (container glow rail) */
-@mixin nav-rail($c, $inset: 4px, $thickness: 2px) {
+@mixin nav-rail($c, $inset: 1.5rem, $thickness: 2px) {
   position: relative;
-  padding: 2px $inset;
+  padding: 1rem $inset;
 
   &::before {
     content: "";

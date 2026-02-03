@@ -41,6 +41,14 @@
   flex-grow: $grow;
 }
 
+/* GRID KIT */
+@mixin grid($cols: 2, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
 /* MEDIA QUERIES */
 // min resolution supported: 390px
 
@@ -63,7 +71,7 @@
 }
 
 @mixin mq-mg {
-  @media (min-width: 820px) { @content; }
+  @media (min-width: 832px) { @content; }
 }
 
 @mixin mq-lg {
