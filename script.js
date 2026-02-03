@@ -1,4 +1,6 @@
-// /* OPEN/CLOSE MENU */
+// /* LEFT MENU */
+
+// /* OPEN/CLOSE FILTER MENU */
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".filter-btn");
   if (!btn) return;
@@ -15,14 +17,14 @@ document.addEventListener("click", (e) => {
 
 // search inside panel
 document.addEventListener("input", (e) => {
-  const input = e.target.closest(".filter-search__input");
+  const input = e.target.closest(".search-input");
   if (!input) return;
 
   const panel = input.closest(".filter-panel");
   const q = input.value.trim().toLowerCase();
 
-  panel.querySelectorAll(".checklist__item").forEach(li => {
-    if (li.classList.contains("checklist__item--selectall")) return;
+  panel.querySelectorAll(".checklist-item").forEach(li => {
+    if (li.classList.contains("check-selectall")) return;
 
     const label = li.innerText.trim().toLowerCase();
     li.style.display = label.includes(q) ? "" : "none";
@@ -41,8 +43,8 @@ document.addEventListener("input", (e) => {
 // select all + indeterminate
 function updateSelectAll(panel) {
   const selectAll = panel.querySelector(".select-all");
-  const items = [...panel.querySelectorAll(".check__input.item")]
-    .filter(cb => cb.closest(".checklist__item").style.display !== "none");
+  const items = [...panel.querySelectorAll(".check-input.item")]
+    .filter(cb => cb.closest(".checklist-item").style.display !== "none");
 
   const checked = items.filter(cb => cb.checked).length;
 
@@ -58,9 +60,9 @@ document.addEventListener("change", (e) => {
   // click select-all
   if (e.target.classList.contains("select-all")) {
     const checked = e.target.checked;
-    panel.querySelectorAll(".check__input.item").forEach(cb => {
+    panel.querySelectorAll(".check-input.item").forEach(cb => {
       // option: ne coche que les visibles
-      if (cb.closest(".checklist__item").style.display === "none") return;
+      if (cb.closest(".checklist-item").style.display === "none") return;
       cb.checked = checked;
     });
     updateSelectAll(panel);
@@ -74,23 +76,23 @@ document.addEventListener("change", (e) => {
 });
 
 document.addEventListener("click", (e) => {
-  const clearBtn = e.target.closest(".filter-search__clear");
+  const clearBtn = e.target.closest(".search-clear");
   if (!clearBtn) return;
 
   const panel = clearBtn.closest(".filter-panel");
-  const input = panel.querySelector(".filter-search__input");
+  const input = panel.querySelector(".search-input");
   const wrap = panel.closest(".menu-filter")?.querySelector(".filter-list");
 
   // 1) reset search
   if (input) input.value = "";
 
   // 2) show all rows
-  panel.querySelectorAll(".checklist__item").forEach(li => {
+  panel.querySelectorAll(".checklist-item").forEach(li => {
     li.style.display = "";
   });
 
   // 3) uncheck all items
-  panel.querySelectorAll(".check__input.item").forEach(cb => cb.checked = false);
+  panel.querySelectorAll(".check-input.item").forEach(cb => cb.checked = false);
 
   // 4) reset select all state
   const selectAll = panel.querySelector(".select-all");
@@ -100,9 +102,9 @@ document.addEventListener("click", (e) => {
   }
 
   // 5) recalc dropdown height if open
-  if (wrap && wrap.closest(".menu-filter").classList.contains("is-open")) {
+  /*if (wrap && wrap.closest(".menu-filter").classList.contains("is-open")) {
     wrap.style.maxHeight = wrap.scrollHeight + "px";
-  }
+  }*/
 });
 
 // /* POPUP TOGGLE */

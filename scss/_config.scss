@@ -83,47 +83,16 @@
 
 /* TAILWIND LIKE CLASSES */
 
-.h-full {
-  height: 100%;
-}
+// sizes
+.h-full { height: 100%; }
 
-.pl-1 {
-  padding-left: 1rem;
-}
-
-.pb-1-5 {
-  padding-bottom: 1.5rem;
-}
+// spacing
+.pl-1 { padding-left: 1rem; }
+.pb-1-5 { padding-bottom: 1.5rem; }
 
 // flex
-.flex-center {
-    @include flexCenter(column, 1rem);
-
-    &.temp {
-      gap: 4rem;
-      padding-top: 4rem
-    }
-}
-
-.flex-align {
-    @include flexAlign(row, 1rem);
-
-    &.start {
-      align-items: flex-start;
-    }
-}
-
-.gap-8 {
-  @include flex(row, 2rem);
-}
-
-.flex-0 {
-  flex: 0 !important;
-}
-
-.flex-1 {
-  flex: 1 !important;
-}
+.flex-0 { flex: 0 !important; }
+.flex-1 { flex: 1 !important; }
 
 // bg & borders
 .rounded { border-radius: 100%; }

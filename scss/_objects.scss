@@ -7,7 +7,8 @@
 
 // card
 .card, %card {
-  background-color: var(--bg-secondary);
+  //background-color: var(--bg-secondary);
+  background-color: var(--bg-light);
   border-radius: 8px;
 }
 
@@ -147,7 +148,7 @@
 input {
   width: 96px;
   padding: 5px 8px;
-  border: 1px solid $secondary-color;
+  //border: 1px solid $secondary-color;
   border-radius: 6px;
   font-size: 14px;
 

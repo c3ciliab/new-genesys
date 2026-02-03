@@ -1,16 +1,42 @@
 /******************* COLORS *******************/  // https://coolors.co/004877-52c9e8-6c6f70-00add8-00325a-9ed6e0-ced4da-dfe3e8-e8ebef-f0f2f6
 :root {
+  --default-color:   #6C6F70; // Ceva Slate
   --primary-color:   #00325a; // Ceva Natural blue
   --secondary-color: white;
-  --default-color:   #6C6F70; // Ceva Slate
+  --dark-color:      #00223d; // Ceva Dark blue
+  --darker-color:    #001629; // Ceva Darker blue
+  --black-blue:      #00111f; // Ceva Black blue
+  --highlight-color: #00add8; // Ceva One
 
-  --bg-primary:     var(--primary-color);
-  --bg-secondary:   var(--secondary-color);
   --bg-default:     var(--default-color);
+  --bg-primary:     var(--darker-color);
+  --bg-secondary:   var(--secondary-color);
+  --bg-light:       var(--primary-color);
+  --bg-dark:        var(--black-blue);
+  --bg-hover:       var(--primary-color);
+  --bg-selected:    var(--primary-color);
 
+  --txt-default:    var(--default-color);
   --txt-primary:    var(--primary-color);
   --txt-secondary:  var(--secondary-color);
-  --txt-default:    var(--default-color);
+
+  --border-color:   var(--highlight-color);
+  --border-light:   var(--black-blue);
+  --border-dark:    var(--black-blue);
+
+  /* &.light-theme {
+    --default-color:   #6C6F70; // Ceva Slate
+    --primary-color:   #00325a; // Ceva Natural blue
+    --secondary-color: white;
+
+    --bg-default:     var(--default-color);
+    --bg-primary:     var(--primary-color);
+    --bg-secondary:   var(--secondary-color);
+
+    --txt-default:    var(--default-color);
+    --txt-primary:    var(--primary-color);
+    --txt-secondary:  var(--secondary-color);
+  } */
 }
 /************** CEVA COLOR CHART **************/
 
@@ -43,6 +69,10 @@ $laserlife-blue:    #1d286e; // Laser Life Blue
 $inline-blue:       #064b8b; // Inline Blue
 
 /************** VARIANTS **************/
+/* LIGHTER and DARKER VARIANTS */
+$ceva-blue-dark:    #00223d;
+$ceva-blue-darker:  #001629;
+$ceva-blue-black:   #00111f;
 
 /* SUPPORT GREYS */
 $platinum-grey:     #f0f2f6;
