@@ -49,6 +49,13 @@
   gap: $gap;
 }
 
+@mixin grid-cols($cols, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
 /* MEDIA QUERIES */
 // min resolution supported: 390px
 
@@ -62,6 +69,10 @@
 }
 
 // common breakpoints (=> https://tailwindcss.com/docs/responsive-design)
+@mixin mq-xs {
+  @media (min-width: 520px) { @content; }
+}
+
 @mixin mq-sm {
   @media (min-width: 640px) { @content; }
 }

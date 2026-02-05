@@ -7,7 +7,7 @@
 
 // card
 .card, %card {
-  @include flex;
+  @include flex (column, 1rem);
   position: relative;
   padding: 1rem;
   border-radius: 8px;
