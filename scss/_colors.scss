@@ -8,7 +8,8 @@
   --black-blue:      #00111f; // Ceva Black blue
   --highlight-color: #00add8; // Ceva One
   
-  --neutral-color:   rgba(255, 255, 255, 0.2);
+  --neutral-color:   rgba(255, 255, 255, 0.24);
+  --neutral-text:    rgba(255, 255, 255, 0.42);
 
   --bg-default:     var(--default-color);
   --bg-primary:     var(--darker-color);
@@ -19,11 +20,13 @@
   --bg-selected:    var(--black-blue);
 
   --txt-default:    var(--default-color);
+  --txt-neutral:    var(--neutral-text);
   --txt-primary:    var(--primary-color);
   --txt-secondary:  var(--secondary-color);
+  --txt-highlight:  var(--highlight-color);
 
   --border-color:   var(--highlight-color);
-  --border-light:   var(--black-blue);
+  --border-light:   var(--bg-light);
   --border-dark:    var(--black-blue);
 
   /* &.light-theme {

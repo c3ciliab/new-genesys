@@ -284,6 +284,19 @@
                 </div>
             </div>
             <div class="h-right-side">
+                <!-- Actions -->
+                <div class="action-tools">
+                    <button class="btn-primary" title="report">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path d="M192 112L304 112L304 200C304 239.8 336.2 272 376 272L464 272L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 128C176 119.2 183.2 112 192 112zM352 131.9L444.1 224L376 224C362.7 224 352 213.3 352 200L352 131.9zM192 64C156.7 64 128 92.7 128 128L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 250.5C512 233.5 505.3 217.2 493.3 205.2L370.7 82.7C358.7 70.7 342.5 64 325.5 64L192 64zM248 320C234.7 320 224 330.7 224 344C224 357.3 234.7 368 248 368L392 368C405.3 368 416 357.3 416 344C416 330.7 405.3 320 392 320L248 320zM248 416C234.7 416 224 426.7 224 440C224 453.3 234.7 464 248 464L392 464C405.3 464 416 453.3 416 440C416 426.7 405.3 416 392 416L248 416z"/>
+                        </svg>
+                    </button>
+                    <button class="btn-primary" title="share">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path d="M457.5 71C450.6 64.1 440.3 62.1 431.3 65.8C422.3 69.5 416.5 78.3 416.5 88L416.5 144L368.5 144C280.1 144 208.5 215.6 208.5 304C208.5 350.7 229.2 384.4 252.1 407.4C260.2 415.6 268.6 422.3 276.4 427.8C285.6 434.3 298.1 433.5 306.5 425.9C314.9 418.3 316.7 405.9 311 396.1C307.4 389.8 304.5 381.2 304.5 369.4C304.5 333.2 333.8 303.9 370 303.9L416.5 303.9L416.5 359.9C416.5 369.6 422.3 378.4 431.3 382.1C440.3 385.8 450.6 383.8 457.5 376.9L593.5 240.9C602.9 231.5 602.9 216.3 593.5 207L457.5 71zM464.5 168L464.5 145.9L542.6 224L464.5 302.1L464.5 280C464.5 266.7 453.8 256 440.5 256L370 256C319.1 256 276.1 289.5 261.7 335.6C258.4 326.2 256.5 315.8 256.5 304C256.5 242.1 306.6 192 368.5 192L440.5 192C453.8 192 464.5 181.3 464.5 168zM144.5 160C100.3 160 64.5 195.8 64.5 240L64.5 496C64.5 540.2 100.3 576 144.5 576L400.5 576C444.7 576 480.5 540.2 480.5 496L480.5 472C480.5 458.7 469.8 448 456.5 448C443.2 448 432.5 458.7 432.5 472L432.5 496C432.5 513.7 418.2 528 400.5 528L144.5 528C126.8 528 112.5 513.7 112.5 496L112.5 240C112.5 222.3 126.8 208 144.5 208L168.5 208C181.8 208 192.5 197.3 192.5 184C192.5 170.7 181.8 160 168.5 160L144.5 160z"/>
+                        </svg>
+                    </button>
+                </div>
                 <!-- LANGUAGE SELECTION -->
                 <button class="trigger" type="button" aria-controls="langSelect" aria-expanded="false" data-popup-pos="right">
                     <img src="../../img/icons/flag_UK.png" width="44">
@@ -368,10 +381,112 @@
                         <li><a href="dashboard_4.html">Alerts</a></li>
                         <li><a href="dashboard_5.html">History</a ></li>
                     </ul>
+                    <!-- Time display 
+                    <p id="clock"></p> -->
                 </div>
                 
                 <!-- SECTION CONTENT -->
-                
+                 <div class="scene">
+                    <!-- 
+                    <div class="scene-header">
+                        <div class="card-wrapper">
+                        </div>
+                    </div> -->
+
+                    <div class="scene-content">
+                        <div class="card-wrapper full-wrap">
+                            <!-- Flocks -->
+                            <div class="card c-double">
+                                <div class="c-left">
+                                    <div class="card-header">
+                                        <h2>Flocks</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="c-data">
+                                            <p class="data">7</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c-right">
+                                    <div class="card-header">
+                                        <h2>On-Going Flock</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="c-data">
+                                            <p class="data">2411CF S54</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Day-old -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Day-old chicks sorted</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="c-data">
+                                        <p class="data">202.000</p>
+                                        <p class="subdata">
+                                            <span>F: 982.5K, </span>
+                                            <span>M: 980.9K</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Alerts -->
+                            <div class="card table-card">
+                                <div class="card-header">
+                                    <h2>Active Alerts</h2>
+                                    <p class="data">2</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="c-table">
+                                        <div class="card-table col-4">
+                                            <div class="row-top-line">
+                                                <span>Start Time</span>
+                                                <span>Code - Name</span>
+                                                <span>DOC quantity</span>
+                                                <span>Stop time</span>
+                                            </div>
+                                            <div class="table-body">
+                                                <div class="table-body-container">
+                                                    <div class="row-line alert-color">
+                                                        <span>9:44 AM</span>
+                                                        <span>G0001 - Emergency stop</span>
+                                                        <span>12,689</span>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="row-line alert-color">
+                                                        <span>9:05 AM</span>
+                                                        <span>A504 - Communication default line</span>
+                                                        <span>12,689</span>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="row-line">
+                                                        <span>5:50 AM</span>
+                                                        <span>A033 - Safety door open</span>
+                                                        <span>2</span>
+                                                        <span>5:54 AM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Speed -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Hour average Speed per line</h2>
+                                </div>
+                                <div class="card-graph">
+                                    <img src="../../img/graphs/graph-0.png" >
+                                    <img src="../../img/graphs/graph-0.png" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
             </section>
         </main>
     </div>
@@ -390,4 +505,5 @@
         </ul>
         <p class="footer-text">Copyright ©2021-22 Ceva. All rights reserved.</p>
     </footer>
+</body>
 </html>
